@@ -6,6 +6,7 @@ defmodule AppImporter.MixProject do
       app: :app_importer,
       version: "0.1.0",
       elixir: "~> 1.13",
+      escript: escript_config(),
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
@@ -16,6 +17,10 @@ defmodule AppImporter.MixProject do
     [
       extra_applications: [:logger]
     ]
+  end
+
+  defp escript_config do
+    [main_module: AppImporter.CommandLine]
   end
 
   # Run "mix help deps" to learn about dependencies.

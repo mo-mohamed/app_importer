@@ -24,3 +24,5 @@ app_importer-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+/app_importer
