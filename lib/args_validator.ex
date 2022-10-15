@@ -1,6 +1,6 @@
 defmodule AppImporter.ArgsValidator do
   #   @moduledoc """
-  #   This odule holds arguments validations for the App Importer tool.
+  #   This module holds arguments validations for the App Importer tool.
   #   """
 
   @allowed_apps ["capterra", "softwareadvice"]
