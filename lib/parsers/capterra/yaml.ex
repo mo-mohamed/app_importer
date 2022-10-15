@@ -2,6 +2,8 @@ defmodule AppImporter.Parsers.Capterra.Yaml do
   #   @moduledoc """
   #   Capterra Yaml parser
   #   """
+  alias AppImporter.Datastore.Storage
+
   @behaviour AppImporter.Parsers.Interface
 
   @rejected_lines [["---\n"], ["-\n"]]
@@ -13,7 +15,7 @@ defmodule AppImporter.Parsers.Capterra.Yaml do
     |> Stream.chunk_by(fn line -> line == @chunk_by end)
     |> Stream.reject(fn line -> line in @rejected_lines end)
     |> Stream.map(&prepare_entry(&1))
-    |> Stream.each(fn p -> IO.inspect(p, label: "To Data Store") end)
+    |> Stream.each(&Storage.store(&1))
     |> Stream.run()
   end
 

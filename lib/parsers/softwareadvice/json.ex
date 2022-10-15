@@ -3,6 +3,8 @@ defmodule AppImporter.Parsers.SoftwareAdvice.Json do
   #   SoftwareAdvice Json parser
   #   """
 
+  alias AppImporter.Datastore.Storage
+
   @behaviour AppImporter.Parsers.Interface
 
   def parse(path) do
@@ -11,7 +13,7 @@ defmodule AppImporter.Parsers.SoftwareAdvice.Json do
     |> Jaxon.Stream.from_enumerable()
     |> Jaxon.Stream.query([:root, "products", :all])
     |> Stream.map(&prepare_product_entry(&1))
-    |> Stream.each(fn p -> IO.inspect(p, label: "To datastore") end)
+    |> Stream.each(&Storage.store(&1))
     |> Stream.run()
   end
 
