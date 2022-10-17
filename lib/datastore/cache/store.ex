@@ -16,6 +16,10 @@ defmodule AppImporter.Datastore.Cache.Store do
     ConCache.get(@cache_name, @products_key)
   end
 
+  def delete() do
+    ConCache.delete(@cache_name, @products_key)
+  end
+
   defp exisitng_data do
     case get() do
       nil -> []

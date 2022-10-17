@@ -7,4 +7,6 @@ defmodule AppImporter.Datastore.Database.Store do
   def store(_data), do: throw("Not implemented")
 
   def get(), do: throw("Not implemented")
+
+  def delete(), do: throw("Not implemented")
 end

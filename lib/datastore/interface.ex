@@ -5,4 +5,5 @@ defmodule AppImporter.Datastore.Interface do
 
   @callback store(data :: map()) :: :ok
   @callback get() :: {:ok, [map()]} | {:error, any()}
+  @callback delete() :: :ok
 end

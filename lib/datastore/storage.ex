@@ -34,6 +34,11 @@ defmodule AppImporter.Datastore.Storage do
     storage.get()
   end
 
+  def flush() do
+    storage = storage_module()
+    storage.delete()
+  end
+
   defp storage_type, do: Application.get_env(:app_importer, :data_store)[:type]
 
   defp storage_module do
