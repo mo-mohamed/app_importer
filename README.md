@@ -1,21 +1,16 @@
 # AppImporter
 
-**TODO: Add description**
+## Description
+
+Utility tool for importing apps from different sources.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `app_importer` to your list of dependencies in `mix.exs`:
+1. Clone the repository
+2. `CD` to the roo directory of the repository.
+3. Run `mix escript.build`
+4. execute `./app_importer` and provide an `app name` and `file path` as arguments
 
-```elixir
-def deps do
-  [
-    {:app_importer, "~> 0.1.0"}
-  ]
-end
-```
+## Running tests
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/app_importer>.
-
+`CD` to the root directory and run `mix test`
